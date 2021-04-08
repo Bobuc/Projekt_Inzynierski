@@ -1,0 +1,12 @@
+.bg-image{
+    background-image: url("../images/bgimages/1.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+}
+
+.navbar {
+    background: rgba(19, 104, 241, 0.8);
+}
