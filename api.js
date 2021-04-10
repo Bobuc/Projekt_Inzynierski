@@ -1,3 +1,4 @@
+//api key
 const apikey = "b344fd2765a2602c4afb314b48ae79f5";
 
 const main = document.getElementById("main");
@@ -16,9 +17,10 @@ async function getWeatherByLocation(city) {
     addWeatherToPage(respData);
 }
 
-
+//Pogoda
 function addWeatherToPage(data) {
     const temp = KtoC(data.main.temp);
+    //unix to local
     const dateObject = new Date(data.sys.sunrise*1000)
     const dateObject1 = new Date(data.sys.sunset*1000)
 
@@ -41,13 +43,12 @@ function addWeatherToPage(data) {
         <small>Zachód słońca : ${(dateObject1.toLocaleString())}</small>
     `;
 
-    // cleanup
+//czyszczenie
     main.innerHTML = "";
 
     main.appendChild(weather);
 }
 
-//kelvin to celsius conversion
 function KtoC(K) {
     return Math.floor(K - 273.15);
 }
