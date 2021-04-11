@@ -26,13 +26,16 @@ function addWeatherToPage(data) {
 
     const weather = document.createElement("div");
     weather.classList.add("weather");
-
+    //todo wyświetlanie na oddzielnej stronie + okreslanie warunków do latania
     weather.innerHTML = `
         <h1>Pogoda dla ${data.name}</h1>
         <br/>
         <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°C <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>
         <small>${(data.weather[0].description).toUpperCase()}</small>
-        
+        <br/>
+        <small>Zachmurzenie : ${data.clouds.all}%</small>
+        <br/>
+        <small>Widoczność : ${data.visibility} metrów</small>
         <br/>
         <small>Wilgotność : ${data.main.humidity}%</small>
         <br/>
@@ -48,7 +51,6 @@ function addWeatherToPage(data) {
 
     main.appendChild(weather);
 }
-
 function KtoC(K) {
     return Math.floor(K - 273.15);
 }
@@ -60,5 +62,8 @@ form.addEventListener("submit", (e) => {
 
     if (city) {
         getWeatherByLocation(city);
+    }else{
+        //ten alert tylko na testy bo wkurza
+        alert("Nie ma takiego miasta!\nWpisz poprawną nazwę miejscowości.");
     }
 });
