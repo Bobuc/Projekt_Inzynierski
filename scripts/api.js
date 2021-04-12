@@ -6,7 +6,7 @@ const form =  document.getElementById("form");
 const search =  document.getElementById("search");
 
 const url = (city) =>
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&lang=pl&units=metric`;
 
 async function getWeatherByLocation(city) {
     const resp = await fetch(url(city), { origin: "cors" });
@@ -19,7 +19,6 @@ async function getWeatherByLocation(city) {
 
 //Pogoda
 function addWeatherToPage(data) {
-    const temp = KtoC(data.main.temp);
     //unix to local
     const dateObject = new Date(data.sys.sunrise*1000)
     const dateObject1 = new Date(data.sys.sunset*1000)
@@ -30,7 +29,7 @@ function addWeatherToPage(data) {
     weather.innerHTML = `
         <h1>Pogoda dla ${data.name}</h1>
         <br/>
-        <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°C <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>
+        <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${data.main.temp}°C <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>
         <small>${(data.weather[0].description).toUpperCase()}</small>
         <br/>
         <small>Zachmurzenie : ${data.clouds.all}%</small>
@@ -41,19 +40,18 @@ function addWeatherToPage(data) {
         <br/>
         <small>Prędkość wiatru : ${(data.wind.speed)} km/h</small>
         <br/>
-        <small>Wschód słońca : ${(dateObject.toLocaleString())}</small>
+        <small>Wschód słońca : ${((dateObject.toLocaleString()).slice(12,))}</small>
         <br/>
-        <small>Zachód słońca : ${(dateObject1.toLocaleString())}</small>
+        <small>Zachód słońca : ${((dateObject1.toLocaleString()).slice(12,))}</small>
     `;
 
 //czyszczenie
     main.innerHTML = "";
 
     main.appendChild(weather);
+
 }
-function KtoC(K) {
-    return Math.floor(K - 273.15);
-}
+
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
