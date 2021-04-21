@@ -12,7 +12,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    <script src="scripts/api.js" defer></script>
     <!-- /Bootstrap Library -->
 
     <title>Weather appliaction</title>
@@ -36,6 +35,10 @@
     <!-- Custom styles -->
     <link href="style/cover.css" rel="stylesheet">
     <link href="style/input_search.css" rel="stylesheet">
+
+    <!-- Scritps -->
+    <script src="scripts/api.js" defer></script>
+    
   
   </head>
   
@@ -65,14 +68,15 @@
 
         <!-- Input Search City -->
         
-        <form id="form">
-          <div class="form-group">
-            <input  type="text" name="myCountry" placeholder="Miasto" class="from-control" id="search">
-          </div>
-          <input type="submit" value="Szukaj">
-          <main id="main"></main>
+        <!--<form autocomplete="off" action="/action_page.php" method="POST">-->
+          <form id="form">
+            <div class="autocomplete" style="width:300px;">
+              <input type="text" name="myCountry" placeholder="Miasto" class="form-control" id="search">
+            </div>
+            <input type="submit" value="Szukaj">
+          </form>
+          <div id="main"></div>
 
-        
         <script src="scripts/autocomplete.js"></script>
         
         <!-- /Input Search City -->
