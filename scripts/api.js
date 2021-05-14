@@ -53,7 +53,7 @@ function addWeatherToPage(data) {
     main.appendChild(weather);
 
 }
-
+// Funkcja do sprawdzania warunków do latania
 function CanIFly(data){
 
     if(data.main.temp < 6 && data.main.humidity > 60){
