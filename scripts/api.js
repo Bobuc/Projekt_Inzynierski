@@ -2,6 +2,7 @@
 const apikey = "b344fd2765a2602c4afb314b48ae79f5";
 
 const main = document.getElementById("main");
+const canifly = document.getElementById("canifly");
 const form =  document.getElementById("form");
 const search =  document.getElementById("search");
 
@@ -15,7 +16,7 @@ async function getWeatherByLocation(city) {
     console.log(respData);
 
     addWeatherToPage(respData);
-    CanIFly(data);
+    CanIFly(respData);
 }
 
 //Pogoda
@@ -52,10 +53,27 @@ function addWeatherToPage(data) {
     main.appendChild(weather);
 
 }
-var siema = data.main.temp;
+
 function CanIFly(data){
-    if(siema > 6){
-        alert ("siema")
+
+    if(data.main.temp < 6 && data.main.humidity > 60){
+        document.getElementById("canifly").innerHTML = "<p style=\"font-size:30px\">Uwaga! Niska temperatura i wysoka wilgotność. Uważaj na Oblodzenia śmigieł.</p>";
+    }else if( data.wind.speed > 30){
+        document.getElementById("canifly").innerHTML = "<p style=\"font-size:30px\">Uwaga! Silny wiatr. Uważaj na szybkie porywy wiatru oraz nie lataj gdy wiatr będzie zbyt silny.</p>";
+    }else if( data.main.humidity > 75){
+        document.getElementById("canifly").innerHTML = "<p style=\"font-size:30px\"> Uwaga! Wysoka wilgotność. Niektóre elementy drona mogą nie działać poprawnie przy dużej wilgotności.</p>";
+    }else if (data.weather.main =='Rain'){
+        document.getElementById("canifly").innerHTML = "<p style=\"font-size:30px\"> Uwaga! Opady deszczu. Nie lataj podczas opadów, może to skutkować zniszczeniem drona. </p>";
+    }else if (data.weather.main =='Snow'){
+        document.getElementById("canifly").innerHTML = "<p style=\"font-size:30px\"> Uwaga! Opady Śniegu. Nie lataj podczas opadów, może to skutkować zniszczeniem drona. </p>";
+    }else if (data.weather.main =='Drizzle'){
+        document.getElementById("canifly").innerHTML = "<p style=\"font-size:30px\"> Uwaga! Mżawka. Nie lataj gdy opady będą zbyt duże . </p>";
+    }else if (data.weather.main =='Thunderstorm'){
+        document.getElementById("canifly").innerHTML = "<p style=\"font-size:30px\"> Uwaga! Burza. Nie lataj podczas opadów, może to skutkować zniszczeniem drona. </p>";
+    }else if (data.weather.main =='Mist'){
+        document.getElementById("canifly").innerHTML = "<p style=\"font-size:30px\"> Uwaga! Silna mgła. Bądź ostrożny podczas latania we mgle oraz nie lataj poza zasięg swojego wzroku </p>";
+    }else{
+        document.getElementById("canifly").innerHTML = "<p style=\"font-size:30px\"> Dobre warunki do latania. </p>";
     }
 }
 
