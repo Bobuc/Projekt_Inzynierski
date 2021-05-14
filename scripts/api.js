@@ -15,6 +15,7 @@ async function getWeatherByLocation(city) {
     console.log(respData);
 
     addWeatherToPage(respData);
+    CanIFly(data);
 }
 
 //Pogoda
@@ -25,7 +26,7 @@ function addWeatherToPage(data) {
 
     const weather = document.createElement("div");
     weather.classList.add("weather");
-    //todo wyświetlanie na oddzielnej stronie + okreslanie warunków do latania
+    //todo okreslanie warunków do latania
     weather.innerHTML = `
         <h1>Pogoda dla ${data.name}</h1>
         <br/>
@@ -51,7 +52,12 @@ function addWeatherToPage(data) {
     main.appendChild(weather);
 
 }
-
+var siema = data.main.temp;
+function CanIFly(data){
+    if(siema > 6){
+        alert ("siema")
+    }
+}
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
