@@ -2,7 +2,7 @@
 <html lang="pl" class="h-100">
   <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Weather appliaction">
+    <meta name="description" content="Weather Drone App">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Piotr & Piotr">
     
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="styles/cover.css">
     <!-- /Cover WWW design style -->
 
-    <title>Weather appliaction</title>
+    <title>CanIFly?</title>
 
     <style>
       .bd-placeholder-img {
@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="styles/weather.css">
     <script src="https://kit.fontawesome.com/5edbe1c807.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/css.css">
+    <link rel="icon" href="images/sunny.svg" sizes="any" type="image/svg+xml">
     <!-- /Custom styles -->
   </head>
   
