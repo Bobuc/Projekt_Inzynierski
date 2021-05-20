@@ -1,0 +1,21 @@
+.safe-ul {
+    width: 70%;
+    margin: auto;
+    border: 1px solid #fff;
+}
+.safe-ul li {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom-color: #ffe030;
+    color: #ffe030;
+}
+.party-ul {
+    border: 1px solid #fff;
+    width: 100%;
+    margin-top: 15px;
+}
+.party-ul li {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 100%;
+    padding: 1px;
+}

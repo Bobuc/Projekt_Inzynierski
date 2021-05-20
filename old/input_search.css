@@ -1,0 +1,31 @@
+/* Input Search City Autocomplete */
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    width: 300px; /* lub 18.75rem */
+    margin-left: 7.75rem;
+    margin-top: .3rem;
+    z-index: 99;
+    border-radius: 5%;
+    /*position the autocomplete items to be the same width as the container:*/
+
+  }
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid #d4d4d4;
+  }
+.autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+.autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+  }
+
+/* ...Input Search City Autocomplete */
