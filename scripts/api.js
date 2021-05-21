@@ -72,18 +72,18 @@ function displayResults (weather) {
   }else if (weather.weather[0].main =='Snow'){
     canifly.innerHTML = "Uwaga! Opady Śniegu. Nie lataj podczas opadów, może to skutkować zniszczeniem drona.";
   }else if (weather.weather[0].main =='Drizzle'){
-    canifly.innerHTML = "Uwaga! Mżawka. Nie lataj gdy opady będą zbyt duże .";
+    canifly.innerHTML = "Uwaga! Mżawka. Nie lataj gdy opady będą zbyt duże.";
   }else if (weather.weather[0].main =='Thunderstorm'){
     canifly.innerHTML = "Uwaga! Burza. Nie lataj podczas opadów, może to skutkować zniszczeniem drona.";
   }else if (weather.weather[0].main =='Mist'){
-    canifly.innerHTML = "Uwaga! Silna mgła. Bądź ostrożny podczas latania we mgle oraz nie lataj poza zasięg swojego wzroku";
+    canifly.innerHTML = "Uwaga! Silna mgła. Bądź ostrożny podczas latania we mgle oraz nie lataj poza zasięg swojego wzroku.";
   }else{
     canifly.innerHTML = "Dobre warunki do latania.";
   }
 }
 
 function dateBuilder (d) {
-  let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  let months = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
   let days = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"];
 
   let day = days[d.getDay()];
